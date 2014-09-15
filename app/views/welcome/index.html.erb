@@ -1,1 +1,6 @@
-<h1>Index Page</h1>
+<% if user_signed_in? %>
+  <%= form_for :visit, :url => {:action => "index", :controller => "visits"} do |f| %>
+    <%= hidden_field_tag :user_id, current_user.id %>
+    <%= f.submit "I went to the Gym" %>
+  <% end %>
+  <% end %>
